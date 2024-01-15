@@ -1,9 +1,6 @@
 function onSubmit(e) {
   e.preventDefault();
 
-  document.querySelector(".msg").textContent = "";
-  document.querySelector("#image").src = "";
-
   const prompt = document.querySelector("#prompt").value;
   const size = document.querySelector("#size").value;
 
@@ -19,7 +16,7 @@ async function generateImageRequest(prompt, size) {
   try {
     showSpinner();
 
-    const response = await fetch("/openai/generateimage", {
+    const response = await fetch("http://localhost:5000/openai/generateimage", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -36,7 +33,7 @@ async function generateImageRequest(prompt, size) {
     }
 
     const data = await response.json();
-
+    removeSpinner();
     const imageUrl = data.data;
 
     document.querySelector("#image").src = imageUrl;
@@ -51,7 +48,7 @@ function showSpinner() {
   document.querySelector(".spinner").classList.add("show");
 }
 
-function showSpinner() {
+function removeSpinner() {
   document.querySelector(".spinner").classList.remove("show");
 }
 document.querySelector("#image-form").addEventListener("submit", onSubmit);
