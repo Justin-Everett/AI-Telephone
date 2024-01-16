@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/spinner.css" />
+    <title>Artificial Whispers</title>
+  </head>
+  <body class="background-image">
+    <header>
+      <section class="links">
+        <a href="./index.html">
+          <button class="navigate navbar">Home</button>
+        </a>
+      </section>
+    </header>
+
+    <section class="center-horizontally">
+      <main id="party-main" class="fill-card">
+        <section id="create-party">
+          <h1>Create A Party</h1>
+          <a href="./game.html">
+            <button onclick="createParty()">Click Here To Create Party</button>
+          </a>
+        </section>
+        <h2>Or</h2>
+        <section id="join-party">
+          <h1>Join A Party</h1>
+          <input placeholder="Party Code" onsubmit="joinParty()" />
+        </section>
+      </main>
+    </section>
+  </body>
+</html>

@@ -2,7 +2,7 @@ function onSubmit(e) {
   e.preventDefault();
 
   const prompt = document.querySelector("#prompt").value;
-  const size = document.querySelector("#size").value;
+  const size = "small";
 
   if (prompt === "") {
     alert("Please add some text");
