@@ -3,6 +3,14 @@
   font-weight: bolder;
 }
 
+*:hover {
+  cursor: default;
+}
+
+input:hover {
+  cursor: text;
+}
+
 .center-horizontally {
   display: flex;
   justify-content: center;
@@ -38,20 +46,19 @@ button:hover {
   transform: translateY(2px);
 }
 
-header {
-  height: 10vh;
-  margin-top: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100vh;
+body {
+  margin: 0px;
+  padding: 0px;
 }
 
 .links {
+  height: 10vh;
+  margin-top: 20px;
   display: flex;
   margin-left: 50px;
   margin-right: 50px;
-  justify-content: space-around;
+  width: 90%;
+  justify-content: space-between;
 }
 
 #container {
@@ -132,13 +139,23 @@ header {
   background-image: url("../res/AI_background.webp");
 }
 
+#navbar-title {
+  color: rgb(6, 9, 11);
+  font-size: 32px;
+  font-weight: bolder;
+}
+
+.fixed {
+  position: fixed;
+}
+
 .card {
   position: absolute;
   top: 20vh;
   background-color: rgba(255, 255, 255, 0.65);
   border-radius: 40px;
   width: 95vh;
-  height: 60vh;
+  height: 50vh;
   padding: 50 px;
 }
 
@@ -148,4 +165,37 @@ header {
   width: fit-content;
   height: fit-content;
   padding: 20px;
+}
+
+.tight-fill-card {
+  margin-top: 1vh;
+  background-color: rgba(255, 255, 255, 0.65);
+  border-radius: 40px;
+  width: fit-content;
+  height: 8vh;
+  padding-left: 5px;
+  padding-right: 5px;
+  align-items: center;
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 0.35s, opacity 0.35s linear;
+}
+
+.visible {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.5s linear;
+}
+
+.move-up {
+  transform: translateY(-60%);
+  transition: 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.move-down {
+  transform: translateY(230%);
+  transition: 0.5s linear;
 }

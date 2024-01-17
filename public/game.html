@@ -11,15 +11,22 @@
     <title>Artificial Whispers</title>
   </head>
   <body class="background-image">
-    <header>
+    <header class="center-horizontally">
+      <div
+        id="navbar-title-container"
+        class="center-horizontally fixed tight-fill-card"
+      >
+        <h1 id="navbar-title">Artificial Whispers</h1>
+      </div>
       <section class="links">
         <a href="./index.html">
           <button class="navigate navbar">Leave Game</button>
         </a>
+        <button class="navigate navbar" onclick="guessImage()">Next</button>
       </section>
     </header>
     <main id="game-main" class="center-horizontally">
-      <form id="image-form">
+      <form id="image-form" class="image-form">
         <input
           onsubmit="doSubmit()"
           id="prompt"

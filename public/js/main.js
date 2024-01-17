@@ -1,6 +1,8 @@
 function onSubmit(e) {
   e.preventDefault();
 
+  document.querySelector("#prompt").textContent = "";
+
   const prompt = document.querySelector("#prompt").value;
   const size = "small";
 
@@ -42,6 +44,40 @@ async function generateImageRequest(prompt, size) {
   } catch (error) {
     document.querySelector(".msg").textContent = error;
   }
+}
+
+function guessImage() {
+  makeHidden();
+  setTimeout(function () {
+    moveElements();
+    document.querySelector("#prompt").value = "";
+  }, 300);
+  setTimeout(function () {
+    makeVisible();
+    document.querySelector("#prompt").placeholder =
+      "Guess the prompt used to make this image";
+  }, 900);
+}
+
+function makeHidden() {
+  document.querySelector("#prompt").classList.remove("visible");
+  document.querySelector("#get-image").classList.remove("visible");
+
+  document.querySelector("#prompt").classList.add("hidden");
+  document.querySelector("#get-image").classList.add("hidden");
+}
+
+function moveElements() {
+  document.querySelector("#image-display").classList.add("move-up");
+  document.querySelector("#image-form").classList.add("move-down");
+}
+
+function makeVisible() {
+  document.querySelector("#prompt").classList.remove("hidden");
+  document.querySelector("#get-image").classList.remove("hidden");
+
+  document.querySelector("#prompt").classList.add("visible");
+  document.querySelector("#get-image").classList.add("visible");
 }
 
 function showSpinner() {

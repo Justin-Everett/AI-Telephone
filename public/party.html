@@ -8,7 +8,13 @@
     <title>Artificial Whispers</title>
   </head>
   <body class="background-image">
-    <header>
+    <header class="center-horizontally">
+      <div
+        id="navbar-title-container"
+        class="center-horizontally fixed tight-fill-card"
+      >
+        <h1 id="navbar-title">Artificial Whispers</h1>
+      </div>
       <section class="links">
         <a href="./index.html">
           <button class="navigate navbar">Home</button>
@@ -19,15 +25,17 @@
     <section class="center-horizontally">
       <main id="party-main" class="fill-card">
         <section id="create-party">
-          <h1>Create A Party</h1>
+          <h1 class="center-horizontally">Create A Party</h1>
           <a href="./game.html">
             <button onclick="createParty()">Click Here To Create Party</button>
           </a>
         </section>
-        <h2>Or</h2>
+        <h2 class="center-horizontally">Or</h2>
         <section id="join-party">
-          <h1>Join A Party</h1>
-          <input placeholder="Party Code" onsubmit="joinParty()" />
+          <h1 class="center-horizontally">Join A Party</h1>
+          <div class="center-horizontally">
+            <input placeholder="Party Code" onsubmit="joinParty()" />
+          </div>
         </section>
       </main>
     </section>
